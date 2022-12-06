@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Checkout.css";
 import CheckoutProduct from './CheckoutProduct'
 import Subtotal from "./Subtotal";
 import { useStateValue } from "./StateProvider";
 import { Link } from "react-router-dom";
+// import FlipMove from "react-flip-move";
 
 const Checkout = () => {
 const [{basket,user }, dispatch] = useStateValue();
-console.log(basket);
+  console.log(basket);
+  
+  const [hideButton, setHideButton] = useState(false)
 
   return (
     <div className="checkout">
@@ -17,22 +20,24 @@ console.log(basket);
           src="https://www.freewebheaders.com/wp-content/gallery/artistic-abstract-hero-headers/thumbs/thumbs_colorful-butterflies-flowers-abstract-art-vector-design.jpg"
           alt="Banner CheckOut"
         />
-       <Link to='/'>Link to Home</Link>
+        <Link to="/">Link to Home</Link>
         <div>
-          <h3>Hello :{user?.email }</h3>
+          <h3>Hello :{user?.email}</h3>
           <p className="checkout__title">Your shopping basket</p>
-
-          {basket.map((item) => {
-            return (
-              <CheckoutProduct
-                id={item.id}
-                title={item.title}
-                image={item.image}
-                price={item.price}
-                rating={item.rating}
-              />
-            );
-          })}
+        
+            {basket.map((item) => {
+              return (
+                <CheckoutProduct
+                  id={item.id}
+                  title={item.title}
+                  image={item.image}
+                  price={item.price}
+                  rating={item.rating}
+                  hideButton={hideButton}
+                />
+              );
+            })}
+          
         </div>
       </div>
       <div className="checkout__right">

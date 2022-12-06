@@ -1,10 +1,15 @@
 import React from "react";
 import "./Product.css";
 import { useStateValue } from "./StateProvider";
+import { forwardRef } from "react";
+import FlipMove from "react-flip-move";
+import Button from '@mui/material/Button';
 
-function Product({ id, title, image, price, rating }) {
-  const [{ basket }, dispatch] = useStateValue();
+
+const Product    = ({ id, title, image, price, rating }) =>{
+  const [{basket}, dispatch] = useStateValue();
   console.log(basket);
+ 
   const AddToBasket = () => {
     dispatch({
       type: "ADD_TO_BASKET",
@@ -37,7 +42,12 @@ function Product({ id, title, image, price, rating }) {
 
       <img src={image} alt="Book" />
 
-      <button onClick={AddToBasket}>Add to basket</button>
+      <Button variant="contained" onClick={AddToBasket}>
+        Add to Basket
+      </Button>
+      {/* <button className="" onClick={AddToBasket}>
+        Add to basket
+      </button> */}
     </div>
   );
 }

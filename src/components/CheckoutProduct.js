@@ -2,9 +2,12 @@
 import './CheckP.css'
 import React from 'react'
 import { useStateValue } from "./StateProvider";
+import  { forwardRef } from "react";
+import FlipMove from "react-flip-move";
+import Button from "@mui/material/Button";
 
 
-const CheckoutProduct = ({ id, image, title, price, rating }) => {
+const CheckoutProduct = ({ id, image, title, price, rating,hideButton }) => {
  
 const [{ basket }, dispatch] = useStateValue();
 
@@ -24,11 +27,7 @@ const [{ basket }, dispatch] = useStateValue();
 
   return (
     <div className="checkoutProduct">
-      <img
-        className="checkoutProduct__image"
-        src={image}
-        alt="CheckOutImage"
-      />
+      <img className="checkoutProduct__image" src={image} alt="CheckOutImage" />
 
       <div className="checkoutProduct__info">
         <p className="checkoutProduct__title">{title}title</p>
@@ -43,7 +42,13 @@ const [{ basket }, dispatch] = useStateValue();
               return <p>⭐</p>;
             })}
         </div>
-        <button onClick={removeFromBasket}>Remove from basket</button>
+
+        <Button variant="contained" onClick={removeFromBasket}>
+          Remove from Basket
+        </Button>
+        {/* {!hideButton && (
+          <button onClick={removeFromBasket}>Remove from basket</button>
+        )} */}
       </div>
     </div>
   );
