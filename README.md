@@ -16,7 +16,8 @@ Project Link - https://clone-80a36.web.app
 &mdash; Login and Logout.\
 &mdash; Add to cart.\
 &mdash; Remove from cart.\
-&mdash; Payment.\
+&mdash;Stripe  Payment.\
+&mdash;Stripe  Orders.\
 &mdash; Neat and clean UI
 
 
@@ -26,7 +27,7 @@ Project Link - https://clone-80a36.web.app
 ### Steps to run in your machine
 
 #### Run the following commands
-npm i.\
+npm install to install dependencies.\
 npm run start
 
 Runs the app in the development mode.\
