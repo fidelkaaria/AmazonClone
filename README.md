@@ -12,11 +12,11 @@
 
 
 #### Features
-Login and Logout.\
-Add to cart.\
-Remove from cart.\
-Payment.\
-Neat and clean UI
+&mdash; Login and Logout.\
+&mdash; Add to cart.\
+&mdash; Remove from cart.\
+&mdash; Payment.\
+&mdash; Neat and clean UI
 
 ### Steps to run in your machine
 
