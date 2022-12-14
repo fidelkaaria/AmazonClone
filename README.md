@@ -37,4 +37,4 @@ You may also see any lint errors in the console.
 
 
 
-## Hope you liked this project, dont forget to ⭐ the repo.
+
